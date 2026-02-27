@@ -2,7 +2,7 @@ import MainLayout from '@/layouts/MainLayout';
 
 const Home = () => {  
   return (
-    <MainLayout>Home</MainLayout>
+    <MainLayout></MainLayout>
   );
 };
 

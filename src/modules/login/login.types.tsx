@@ -4,8 +4,10 @@ export interface Credentials {
 }
 
 export interface User {
+  id: number;
   name: string;
-  role: string;
+  role: 'admin' | 'manager' | 'staff';
+  branches: number[];
 }
 
 export interface LoginState {

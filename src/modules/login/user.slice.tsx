@@ -3,8 +3,10 @@ import type { UserState } from './login.types';
 
 const initialState: UserState = {
   user: {
-    name: 'brewster',
-    role: 'admin'
+    id: 1,
+    name: 'andressa',
+    role: 'admin',
+    branches: [1,2,3]
   },
   loading: false,
   error: null,
