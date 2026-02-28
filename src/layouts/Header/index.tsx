@@ -26,7 +26,6 @@ const Header = () => {
             <Select
               size="small"
               value={1}
-              label="branch"
               sx={{
                 minWidth: 160,
                 height: 36,
