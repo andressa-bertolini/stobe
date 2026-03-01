@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw'
 
 export const userHandlers = [
-  http.get('/api/me', async () => {
+  http.get('/api/users', async () => {
     await new Promise((res) => setTimeout(res, 800)) // simula latência
 
     return HttpResponse.json({

@@ -1,6 +1,6 @@
 import { AppBar } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import type { SelectChangeEvent } from '@mui/material/Select';
 import PersonIcon from '@mui/icons-material/Person';
 import { useSelector } from 'react-redux'

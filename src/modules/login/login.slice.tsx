@@ -11,7 +11,6 @@ const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {},
-  extraReducers: {}
 });
 
 export default loginSlice.reducer;
