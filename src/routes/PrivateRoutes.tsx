@@ -1,12 +1,22 @@
-const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
-  //const { token } = useSelector((state: RootState) => state.auth);
-  //const location = useLocation();
+import { useParams, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store';
+import { ReactNode } from "react";
 
-  // if (!token) {
-  //   return <Navigate to="/login" state={{ from: location }} replace />;
+const PrivateRoute = ({ children }: { children: ReactNode }) => {
+  const { branchId } = useParams();
+  // const isAuthenticated = useSelector((state: RootState) => state.user.isAuthenticated);
+  const firstBranch = useSelector((state: RootState) => state.user.user?.branches?.[0]);
+
+  // if (!isAuthenticated) {
+  //   return <Navigate to="/login" replace />;
   // }
 
-  return <>{children}</>;
+  if (!branchId && firstBranch) {
+    return <Navigate to={`/${firstBranch}`} replace />;
+  }
+
+  return children;
 };
 
 export default PrivateRoute;

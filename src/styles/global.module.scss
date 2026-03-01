@@ -1,0 +1,32 @@
+.title {
+  color: #014830;
+  margin: 0;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  tr {
+    th {
+      background-color: #014830;
+      color: #fff;
+      text-align: left;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 4px 8px;
+    }
+    td {
+      background-color: #f0f7f5;
+      font-size: 14px;
+      padding: 4px 8px;
+      line-height: 0;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

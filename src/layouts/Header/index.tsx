@@ -1,14 +1,23 @@
 import { AppBar } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import type { SelectChangeEvent } from '@mui/material/Select';
 import PersonIcon from '@mui/icons-material/Person';
 import { useSelector } from 'react-redux'
-import type { RootState } from '@/store'
+import type { RootState } from '@/store';
+import { useParams, useNavigate } from 'react-router-dom';
 import Logo from '@/assets/logo.png';
 import styles from './header.module.scss';
 
 const Header = () => {
-  const { user } = useSelector((state: RootState) => state.user)
+  const { branchId } = useParams();
+  const navigate = useNavigate();
+  const { user } = useSelector((state: RootState) => state.user);
+
+  const handleBranchChange = (event: SelectChangeEvent) => {
+    navigate(`/${event.target.value}`, { replace: true });
+  };
+
   return (
     <AppBar
       position="fixed"
@@ -25,7 +34,8 @@ const Header = () => {
           <div className={`${styles.headerBranch}`}>
             <Select
               size="small"
-              value={1}
+              value={branchId}
+              onChange={handleBranchChange}
               sx={{
                 minWidth: 160,
                 height: 36,

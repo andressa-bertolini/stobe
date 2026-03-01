@@ -1,6 +1,5 @@
-import type { ReactNode } from 'react'
+import type { ReactNode } from 'react';
 import styles from './mainLayout.module.scss';
-
 import Header from './Header';
 import Sidebar from './Sidebar';
 
@@ -9,13 +8,14 @@ type MainLayoutProps = {
 }
 
 const MainLayout = ({ children }: MainLayoutProps) => {
+
   return (
     <div className={`${styles.mainLayout}`}>
       <div style={{ display: 'flex' }}>
         <Header />
         <Sidebar />
       </div>
-      <div sx={{ flex: 1, p: 2 }}>
+      <div style={{ flex: 1 }}>
         {children}
       </div>
     </div>
