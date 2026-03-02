@@ -5,7 +5,7 @@ const StockMovements = () => {
 
   return (
     <MainLayout>
-      <h1 className={`${styles.title}`}>Stock Movements</h1>
+      <h1 className={styles.title}>Stock Movements</h1>
     </MainLayout>
   );
 };

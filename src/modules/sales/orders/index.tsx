@@ -5,7 +5,7 @@ const salesOrders = () => {
 
   return (
     <MainLayout>
-      <h1 className={`${styles.title}`}>Sales Orders</h1>
+      <h1 className={styles.title}>Sales Orders</h1>
     </MainLayout>
   );
 };

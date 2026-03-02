@@ -10,7 +10,7 @@ type MainLayoutProps = {
 const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
-    <div className={`${styles.mainLayout}`}>
+    <div className={styles.mainLayout}>
       <div style={{ display: 'flex' }}>
         <Header />
         <Sidebar />

@@ -5,7 +5,7 @@ const SalesMenu = () => {
 
   return (
     <MainLayout>
-      <h1 className={`${styles.title}`}>Sales Menu</h1>
+      <h1 className={styles.title}>Sales Menu</h1>
     </MainLayout>
   );
 };

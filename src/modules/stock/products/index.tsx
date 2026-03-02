@@ -5,8 +5,8 @@ const StockProducts = () => {
 
   return (
     <MainLayout>
-      <h1 className={`${styles.title}`}>Stock Products</h1>
-      <table className={`${styles.table}`}>
+      <h1 className={styles.title}>Stock Products</h1>
+      <table className={styles.table}>
         <tr>
           <th colSpan={2}>Item</th>
           <th>Description</th>

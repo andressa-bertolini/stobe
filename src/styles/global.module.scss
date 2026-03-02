@@ -1,5 +1,11 @@
+:root {
+  --green-300: #015135;
+  --green-500: #014830;
+  --green-700: #013b27;
+}
+
 .title {
-  color: #014830;
+  color: var(--green-500);
   margin: 0;
   font-size: 20px;
   text-transform: uppercase;
@@ -10,7 +16,7 @@
   border-collapse: collapse;
   tr {
     th {
-      background-color: #014830;
+      background-color: var(--green-500);
       color: #fff;
       text-align: left;
       font-size: 14px;

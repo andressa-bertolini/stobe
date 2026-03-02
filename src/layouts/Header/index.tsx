@@ -26,12 +26,12 @@ const Header = () => {
         flexDirection: 'row',
         zIndex: 1201,
       }}
-      className={`${styles.header}`}>
-        <div className={`${styles.headerLogo}`}>
+      className={styles.header}>
+        <div className={styles.headerLogo}>
           <img src={Logo} />
         </div>
-        <div className={`${styles.headerUser}`}>
-          <div className={`${styles.headerBranch}`}>
+        <div className={styles.headerUser}>
+          <div className={styles.headerBranch}>
             <Select
               size="small"
               value={branchId}
@@ -41,18 +41,18 @@ const Header = () => {
                 height: 36,
                 fontSize: 14,
                 marginRight: '20px',
-                color: '#014830',
+                color: 'var(--green-500)',
                 '& .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#014830',
+                  borderColor: 'var(--green-500)',
                 },
                 '&:hover .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#014830',
+                  borderColor: 'var(--green-500)',
                 },
                 '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#014830',
+                  borderColor: 'var(--green-500)',
                 },
                 '& .MuiSvgIcon-root': {
-                  color: '#014830',
+                  color: 'var(--green-500)',
                 },
               }}
             >
@@ -61,10 +61,10 @@ const Header = () => {
               <MenuItem value={3}>North Beach Branch</MenuItem>
             </Select>
           </div>
-          <PersonIcon sx={{ color: '#014830' }} />
-          <div className={`${styles.headerUserInfo}`}>
-            <span className={`${styles.headerUserName}`}>{user?.name}</span>
-            <span className={`${styles.headerUserRole}`}>{user?.role}</span>
+          <PersonIcon sx={{ color: 'var(--green-500)' }} />
+          <div className={styles.headerUserInfo}>
+            <span className={styles.headerUserName}>{user?.name}</span>
+            <span className={styles.headerUserRole}>{user?.role}</span>
           </div>
         </div>
     </AppBar>

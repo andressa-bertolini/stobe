@@ -29,12 +29,12 @@ const Sidebar = () => {
         top: '48px',
         [`& .MuiDrawer-paper`]: { 
           width: '250px', 
-          backgroundColor: '#013b27',
+          backgroundColor: 'var(--green-700)',
           top: '48px',
           boxSizing: 'border-box'
         },
       }}
-      className={`${styles.sidebar}`}>
+      className={styles.sidebar}>
 
         <List sx={{
           color: '#fff',
@@ -47,7 +47,7 @@ const Sidebar = () => {
         }}>
           <ListItem disablePadding>
             <ListItemButton 
-              sx={{ pl: 4, backgroundColor: '#015135' }}
+              sx={{ pl: 4, backgroundColor: 'var(--green-300)' }}
               onClick={() => navigate(`/${branchId}`)}
             >
               <ListItemIcon>
@@ -68,7 +68,7 @@ const Sidebar = () => {
           </ListItem>
           <List disablePadding>
             <ListItemButton 
-              sx={{ pl: 4, backgroundColor: '#015135' }}
+              sx={{ pl: 4, backgroundColor: 'var(--green-300)' }}
               onClick={() => navigate(`/stock/products/${branchId}`)}
             >
               <ListItemIcon>
@@ -79,7 +79,7 @@ const Sidebar = () => {
           </List>
           <ListItem disablePadding>
             <ListItemButton 
-              sx={{ pl: 4, backgroundColor: '#015135' }}
+              sx={{ pl: 4, backgroundColor: 'var(--green-300)' }}
               onClick={() => navigate(`/stock/movements/${branchId}`)}
             >
               <ListItemIcon>
@@ -100,7 +100,7 @@ const Sidebar = () => {
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton 
-              sx={{ pl: 4, backgroundColor: '#015135' }}
+              sx={{ pl: 4, backgroundColor: 'var(--green-300)' }}
               onClick={() => navigate(`/sales/menu/${branchId}`)}
             >
               <ListItemIcon>
@@ -111,7 +111,7 @@ const Sidebar = () => {
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton 
-              sx={{ pl: 4, backgroundColor: '#015135' }}
+              sx={{ pl: 4, backgroundColor: 'var(--green-300)' }}
               onClick={() => navigate(`/sales/orders/${branchId}`)}
             >
               <ListItemIcon>
