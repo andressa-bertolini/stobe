@@ -1,13 +1,10 @@
 import { Drawer } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import HomeIcon from '@mui/icons-material/Home';
+// import HomeIcon from '@mui/icons-material/Home';
+//import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import InventoryIcon from '@mui/icons-material/Inventory';
-import SyncAltIcon from '@mui/icons-material/SyncAlt';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import StorefrontIcon from '@mui/icons-material/Storefront';
 
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
@@ -31,7 +28,10 @@ const Sidebar = () => {
           width: '250px', 
           backgroundColor: 'var(--green-700)',
           top: '48px',
-          boxSizing: 'border-box'
+          boxSizing: 'border-box',
+        },
+        [`& .MuiList-root`]: { 
+          padding: 0
         },
       }}
       className={styles.sidebar}>
@@ -57,7 +57,7 @@ const Sidebar = () => {
             </ListItemButton>
           </ListItem>
           <Divider /> */}
-          <ListItem 
+          {/* <ListItem 
             disablePadding
             sx={{ pl: 2, pt: 1, pb: 1 }}
           >
@@ -65,31 +65,31 @@ const Sidebar = () => {
               <InventoryIcon/>
             </ListItemIcon>
             <ListItemText primary='Stock' />
-          </ListItem>
+          </ListItem> */}
           <List disablePadding>
             <ListItemButton 
-              sx={{ pl: 4, backgroundColor: 'var(--green-300)' }}
-              onClick={() => navigate(`/stock/products/${branchId}`)}
+              sx={{ backgroundColor: 'var(--green-300)' }}
+              onClick={() => navigate(`/inventory/${branchId}`)}
             >
               <ListItemIcon>
-                <LocalOfferIcon/>
+                <InventoryIcon/>
               </ListItemIcon>
-              <ListItemText primary='Products' />
+              <ListItemText primary='Inventory' />
             </ListItemButton>
           </List>
-          <ListItem disablePadding>
+          {/* <ListItem disablePadding>
             <ListItemButton 
               sx={{ pl: 4, backgroundColor: 'var(--green-300)' }}
-              onClick={() => navigate(`/stock/movements/${branchId}`)}
+              onClick={() => navigate(`/movements/${branchId}`)}
             >
               <ListItemIcon>
                 <SyncAltIcon/>
               </ListItemIcon>
               <ListItemText primary='Movements' />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           <Divider />
-          <ListItem 
+          {/* <ListItem 
             disablePadding
             sx={{ pl: 2, pt: 1, pb: 1 }}
           >
@@ -97,11 +97,11 @@ const Sidebar = () => {
               <AttachMoneyIcon/>
             </ListItemIcon>
             <ListItemText primary='Sales' />
-          </ListItem>
+          </ListItem> */}
           <ListItem disablePadding>
             <ListItemButton 
-              sx={{ pl: 4, backgroundColor: 'var(--green-300)' }}
-              onClick={() => navigate(`/sales/menu/${branchId}`)}
+              sx={{ backgroundColor: 'var(--green-300)' }}
+              onClick={() => navigate(`/menu/${branchId}`)}
             >
               <ListItemIcon>
                 <MenuBookIcon/>
@@ -109,17 +109,17 @@ const Sidebar = () => {
               <ListItemText primary='Menu' />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
+          {/* <ListItem disablePadding>
             <ListItemButton 
               sx={{ pl: 4, backgroundColor: 'var(--green-300)' }}
-              onClick={() => navigate(`/sales/orders/${branchId}`)}
+              onClick={() => navigate(`/orders/${branchId}`)}
             >
               <ListItemIcon>
                 <StorefrontIcon/>
               </ListItemIcon>
               <ListItemText primary='Orders' />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           <Divider />
         </List>
     </Drawer>

@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import loginReducer from '@/modules/login/login.slice';
 import userReducer from '@/modules/login/user.slice';
-import productsReducer from '@/modules/stock/products/products.slice';
+import inventoryReducer from '@/modules/inventory/inventory.slice';
+import menuReducer from '@/modules/menu/menu.slice';
 
 export const store = configureStore({
   reducer: {
     login: loginReducer,
     user: userReducer,
-    products: productsReducer,
+    inventory: inventoryReducer,
+    menu: menuReducer,
   },
 })
 

@@ -1,14 +1,14 @@
 ## ☕ Stobe
 
-<!-- <a href="https://projects.andressabertolini.com/prime-estate/" target="_blank">
-  <img src="./thumbnail.jpg" alt="Prime Estate Thumbnail" width="300" />
-</a> -->
+<a href="https://projects.andressabertolini.com/stobe/" target="_blank">
+  <img src="./thumbnail.png" alt="Stobe Thumbnail" width="300" />
+</a>
 
 **Stobe** is inventory management system for a multi-branch coffee shop. It helps to keep track of the inventory and sinalizes when to make orders for more supplies by registering the coffee shop sales.
 
-<!-- <a href="https://projects.andressabertolini.com/prime-estate/" target="_blank">
-  <img src="https://img.shields.io/badge/Live%20Demo-1296a9?style=for-the-badge" alt="Ver projeto">
-</a> -->
+<a href="https://projects.andressabertolini.com/stobe/" target="_blank">
+  <img src="https://img.shields.io/badge/Live%20Demo-013B27?style=for-the-badge" alt="Live Demo">
+</a>
 
 <br>
 

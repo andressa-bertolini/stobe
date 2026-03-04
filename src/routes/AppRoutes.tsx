@@ -3,10 +3,8 @@ import PrivateRoute from '@/routes/PrivateRoutes';
 
 import HomeRoutes from '@/modules/home/home.routes';
 import LoginRoutes from '@/modules/login/login.routes';
-import ProductsRoutes from '@/modules/stock/products/products.routes';
-import StockMovementsRoutes from '@/modules/stock/movements/stockMovements.routes';
-import SalesMenuRoutes from '@/modules/sales/menu/salesMenu.routes';
-import SalesOrdersRoutes from '@/modules/sales/orders/salesOrders.routes';
+import InventoryRoutes from '@/modules/inventory/inventory.routes';
+import MenuRoutes from '@/modules/menu/menu.routes';
 
 const AppRoutes = () => {
 
@@ -16,7 +14,7 @@ const AppRoutes = () => {
         path="/:branchId/*"
         element={
           <PrivateRoute>
-            <ProductsRoutes />
+            <InventoryRoutes />
           </PrivateRoute>
         }
       />
@@ -29,34 +27,18 @@ const AppRoutes = () => {
         }
       />
       <Route
-        path="/stock/products/:branchId"
+        path="/inventory/:branchId"
         element={
           <PrivateRoute>
-            <ProductsRoutes />
+            <InventoryRoutes />
           </PrivateRoute>
         }
       />
       <Route
-        path="/stock/movements/:branchId"
+        path="/menu/:branchId"
         element={
           <PrivateRoute>
-            <StockMovementsRoutes />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/sales/menu/:branchId"
-        element={
-          <PrivateRoute>
-            <SalesMenuRoutes />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/sales/orders/:branchId"
-        element={
-          <PrivateRoute>
-            <SalesOrdersRoutes />
+            <MenuRoutes />
           </PrivateRoute>
         }
       />

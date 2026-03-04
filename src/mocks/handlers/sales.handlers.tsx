@@ -1,15 +1,15 @@
 import { http, HttpResponse } from 'msw';
-import { inventory } from '../data/inventory';
+import { menu } from '../data/menu';
 
-export const stockHandlers = [
-  http.get('/stobe/api/inventory', ({ request }) => {
+export const salesHandlers = [
+  http.get('/stobe/api/menu', ({ request }) => {
     const url = new URL(request.url)
 
     const page = Number(url.searchParams.get('page') ?? 0)
     const pageSize = Number(url.searchParams.get('pageSize') ?? 5)
     const search = url.searchParams.get('search')?.toLowerCase() ?? ''
 
-    const filtered = inventory.filter(item =>
+    const filtered = menu.filter(item =>
       item.name.toLowerCase().includes(search)
     )
 
