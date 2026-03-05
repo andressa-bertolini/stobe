@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import type { AppDispatch, RootState } from '@/store';
 import formatCurrency from '@/utils/formatCurrency';
+import getStockStatus from '@/utils/getStockStatus';
 import ZoomImage from '@/components/ZoomImage';
 
 import Grid from '@mui/material/Grid';
@@ -12,6 +13,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import MainLayout from '@/layouts/MainLayout';
 import styles from '@/styles/global.module.scss';
+import { StockIndicator } from "./components/StockIndicator";
 import { fetchInventory } from "./inventory.service";
 
 const Inventory = () => {
@@ -51,6 +53,7 @@ const Inventory = () => {
             <th>Supplier</th>
             <th style={{width: '150px', textAlign: 'center'}}>Pack Size</th>
             <th style={{width: '150px', textAlign: 'center'}}>In Stock</th>
+            <th style={{width: '150px', textAlign: 'center'}}>Stock Status</th>
             <th style={{width: '150px', textAlign: 'center'}}>Price</th>
             <th style={{width: '25px'}}>&nbsp;</th>
             <th style={{width: '25px'}}>&nbsp;</th>
@@ -69,6 +72,11 @@ const Inventory = () => {
                 {item?.packSize?.quantity}{' '}
                 {item?.packSize?.unit}</td>
               <td style={{textAlign: 'center'}}>{item?.inStock}</td>
+              <td>
+                <div style={{marginLeft: '30px'}}>
+                  <StockIndicator status={getStockStatus(item?.inStock, item?.minStock)}/>
+                </div>
+              </td>
               <td style={{textAlign: 'center'}}>$ {formatCurrency(item?.price)}</td>
               <td><EditIcon /></td>
               <td><DeleteIcon /></td>

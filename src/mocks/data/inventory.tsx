@@ -8,7 +8,8 @@ export const inventory = [
       quantity: 2,
       unit: 'kg'
     },
-    inStock: 3,
+    inStock: 8,
+    minStock: 2,
     price: 54,
   },
   {
@@ -20,7 +21,8 @@ export const inventory = [
       quantity: 2,
       unit: 'kg'
     },
-    inStock: 2,
+    inStock: 4,
+    minStock: 1,
     price: 65,
   },
   {
@@ -32,7 +34,8 @@ export const inventory = [
       quantity: 4,
       unit: 'lt'
     },
-    inStock: 12,
+    inStock: 3,
+    minStock: 4,
     price: 4.50,
   },
   {
@@ -45,7 +48,8 @@ export const inventory = [
       unit: 'lt'
     },
     inStock: 5,
-    price: 28.00,
+    minStock: 1,
+    price: 23.00,
   },
   {
     id: 5,
@@ -56,7 +60,8 @@ export const inventory = [
       quantity: 1,
       unit: 'lt'
     },
-    inStock: 8,
+    inStock: 3,
+    minStock: 1,
     price: 12.50,
   },
   {
@@ -65,10 +70,11 @@ export const inventory = [
     name: 'Caramel Drizzle Sauce',
     supplier: 'Velvet Bean Syrups',
     packSize: {
-      quantity: 0.5,
-      unit: 'kg' 
+      quantity: 500,
+      unit: 'g' 
     },
-    inStock: 10,
+    inStock: 4,
+    minStock: 1,
     price: 15.00,
   },
   {
@@ -80,7 +86,8 @@ export const inventory = [
       quantity: 1,
       unit: 'lt'
     },
-    inStock: 15,
+    inStock: 2,
+    minStock: 1,
     price: 18.00,
   },
   {
@@ -92,7 +99,8 @@ export const inventory = [
       quantity: 500,
       unit: 'g' 
     },
-    inStock: 10,
+    inStock: 1,
+    minStock: 4,
     price: 35.00,
   },
   {
@@ -101,10 +109,11 @@ export const inventory = [
     name: 'Green Tea',
     supplier: 'Atlas Tea Merchants',
     packSize: {
-      quantity: 250,
+      quantity: 500,
       unit: 'g'
     },
-    inStock: 12,
+    inStock: 5,
+    minStock: 2,
     price: 22.00,
   },
   {
@@ -113,10 +122,11 @@ export const inventory = [
     name: 'Black Tea',
     supplier: 'Atlas Tea Merchants',
     packSize: {
-      quantity: 250,
+      quantity: 500,
       unit: 'g'
     },
-    inStock: 15,
+    inStock: 0,
+    minStock: 1,
     price: 20.00,
   }
 ]

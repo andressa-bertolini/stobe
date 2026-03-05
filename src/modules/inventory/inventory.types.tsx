@@ -8,6 +8,7 @@ export type Item = {
     unit: number;
   };
   inStock: number;
+  minStock: number,
   price: number;
 }
 
