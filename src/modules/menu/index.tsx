@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { AppDispatch, RootState } from '@/store';
 import ZoomImage from '@/components/ZoomImage';
 
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
+import { Grid, Button, Checkbox, LinearProgress } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -15,7 +13,7 @@ import { fetchMenu } from "./menu.service";
 
 const Menu = () => {  
   const dispatch = useDispatch<AppDispatch>();  
-  const { menu } = useSelector((state: RootState) => state.menu);
+  const { menu, loading } = useSelector((state: RootState) => state.menu);
 
   useEffect(() => {
     dispatch(fetchMenu({ page: 1, pageSize: 20 }));
@@ -52,6 +50,13 @@ const Menu = () => {
               <th style={{width: '25px'}}>&nbsp;</th>
             </tr>
           </thead>
+          {loading.list && 
+            <tr>
+              <td colSpan={10}>
+                <LinearProgress />
+              </td>
+            </tr>
+          }
           <tbody>
             {menu?.map((item) => (
               <tr key={item?.id}>

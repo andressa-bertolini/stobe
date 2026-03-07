@@ -1,8 +1,10 @@
-import { http, HttpResponse } from 'msw';
+import { http, HttpResponse, delay } from 'msw';
 import { inventory } from '../data/inventory';
 
-export const stockHandlers = [
-  http.get('/stobe/api/inventory', ({ request }) => {
+export const inventoryHandlers = [
+  http.get('/stobe/api/inventory', async ({ request }) => {
+    await delay(800);
+
     const url = new URL(request.url)
 
     const page = Number(url.searchParams.get('page') ?? 0)

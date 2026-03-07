@@ -13,6 +13,14 @@ import '@fontsource/roboto/700.css';
 import App from './App.tsx'
 
 const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#014830',
+    },
+    secondary: {
+      main: '#015135',
+    },
+  },
   typography: {
     fontFamily: 'Roboto, Arial, sans-serif',
   },

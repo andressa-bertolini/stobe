@@ -6,9 +6,7 @@ import getStockStatus from '@/utils/getStockStatus';
 import ZoomImage from '@/components/ZoomImage';
 import { useParams } from 'react-router-dom';
 
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
+import { LinearProgress, Grid, Button, Checkbox } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -19,7 +17,7 @@ import { fetchInventory } from "./inventory.service";
 
 const Inventory = () => {
   const dispatch = useDispatch<AppDispatch>();  
-  const { inventory } = useSelector((state: RootState) => state.inventory);
+  const { inventory, loading } = useSelector((state: RootState) => state.inventory);
   const { branchId } = useParams();
 
   useEffect(() => {
@@ -61,6 +59,13 @@ const Inventory = () => {
             <th style={{width: '25px'}}>&nbsp;</th>
           </tr>
         </thead>
+        {loading.list && 
+          <tr>
+            <td colSpan={10}>
+              <LinearProgress />
+            </td>
+          </tr>
+        }
         <tbody>
           {inventory?.map((item) => (
             <tr key={item?.id}>

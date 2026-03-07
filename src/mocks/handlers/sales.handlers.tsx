@@ -1,8 +1,10 @@
-import { http, HttpResponse } from 'msw';
+import { http, HttpResponse, delay } from 'msw';
 import { menu } from '../data/menu';
 
 export const salesHandlers = [
-  http.get('/stobe/api/menu', ({ request }) => {
+  http.get('/stobe/api/menu', async ({ request }) => {
+    await delay(800);
+    
     const url = new URL(request.url)
 
     const page = Number(url.searchParams.get('page') ?? 0)

@@ -93,7 +93,7 @@ export const inventory = [
       quantity: 1,
       unit: 'lt'
     },
-    inStock: 2,
+    inStock: 0,
     minStock: 1,
     price: 18.00,
   },
