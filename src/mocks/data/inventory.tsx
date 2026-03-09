@@ -1,4 +1,5 @@
 export const inventory = [
+  /* Branch 1 - South Beach */
   {
     branchId: 1,
     id: 111,
@@ -140,6 +141,33 @@ export const inventory = [
     price: 20.00,
   },
   {
+    branchId: 1,
+    id: 121,
+    image: '/stobe/mock/images/inventory/11.png',
+    name: 'Chocolate Chip Cookie Dough',
+    supplier: 'The Golden Whisk Bakery',
+    packSize: {
+      quantity: 50,
+      unit: 'un' 
+    },
+    inStock: 4,
+    price: 45.00,
+  },
+  {
+    branchId: 1,
+    id: 122,
+    image: '/stobe/mock/images/inventory/12.png',
+    name: 'Peanut Butter Cookie Dough',
+    supplier: 'The Golden Whisk Bakery',
+    packSize: {
+      quantity: 50,
+      unit: 'un' 
+    },
+    inStock: 4,
+    price: 45.00,
+  },
+  /* Branch 2 - Downtown */
+  {
     branchId: 2,
     id: 221,
     image: '/stobe/mock/images/inventory/1.png',
@@ -279,6 +307,35 @@ export const inventory = [
     minStock: 1,
     price: 20.00,
   },
+  ,
+  {
+    branchId: 2,
+    id: 221,
+    image: '/stobe/mock/images/inventory/11.png',
+    name: 'Chocolate Chip Cookie Dough',
+    supplier: 'The Golden Whisk Bakery',
+    packSize: {
+      quantity: 50,
+      unit: 'un' 
+    },
+    inStock: 4,
+    price: 45.00,
+  },
+  ,
+  {
+    branchId: 2,
+    id: 222,
+    image: '/stobe/mock/images/inventory/12.png',
+    name: 'Peanut Butter Cookie Dough',
+    supplier: 'The Golden Whisk Bakery',
+    packSize: {
+      quantity: 50,
+      unit: 'un' 
+    },
+    inStock: 4,
+    price: 45.00,
+  },
+  /* Branch 3 - North Beach */
   {
     branchId: 3,
     id: 331,
@@ -418,5 +475,33 @@ export const inventory = [
     inStock: 3,
     minStock: 1,
     price: 20.00,
+  },
+  ,
+  {
+    branchId: 3,
+    id: 331,
+    image: '/stobe/mock/images/inventory/11.png',
+    name: 'Chocolate Chip Cookie Dough',
+    supplier: 'The Golden Whisk Bakery',
+    packSize: {
+      quantity: 50,
+      unit: 'un' 
+    },
+    inStock: 4,
+    price: 45.00,
+  },
+  ,
+  {
+    branchId: 3,
+    id: 332,
+    image: '/stobe/mock/images/inventory/12.png',
+    name: 'Peanut Butter Cookie Dough',
+    supplier: 'The Golden Whisk Bakery',
+    packSize: {
+      quantity: 50,
+      unit: 'un' 
+    },
+    inStock: 4,
+    price: 45.00,
   },
 ]

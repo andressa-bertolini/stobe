@@ -79,18 +79,18 @@ export const menu = [
     name: 'Black Tea',
     category: 'Tea',
   },
-  // {
-  //   id: 15,
-  //   image: '/stobe/mock/images/menu/1.png',
-  //   name: 'Chocolate Chip Cookie',
-  //   category: 'Cookie',
-  // },
-  // {
-  //   id: 16,
-  //   image: '/stobe/mock/images/menu/1.png',
-  //   name: 'Peanut Butter Cookie',
-  //   category: 'Cookie',
-  // },
+  {
+    id: 15,
+    image: '/stobe/mock/images/menu/1.png',
+    name: 'Chocolate Chip Cookie',
+    category: 'Cookie',
+  },
+  {
+    id: 16,
+    image: '/stobe/mock/images/menu/1.png',
+    name: 'Peanut Butter Cookie',
+    category: 'Cookie',
+  },
   // {
   //   id: 17,
   //   image: '/stobe/mock/images/menu/1.png',

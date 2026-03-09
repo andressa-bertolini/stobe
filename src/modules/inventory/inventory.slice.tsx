@@ -26,6 +26,7 @@ const inventorySlice = createSlice({
       .addCase(fetchInventory.fulfilled, (state, action) => {
         state.loading.list = false;
         state.inventory = action.payload.inventory;
+        state.totalPages = action.payload.totalPages;
       })
       .addCase(fetchInventory.rejected, (state, action) => {
         state.loading.list = false;

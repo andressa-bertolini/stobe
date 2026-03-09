@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import type { AppDispatch, RootState } from '@/store';
 import formatCurrency from '@/utils/formatCurrency';
@@ -6,7 +6,7 @@ import getStockStatus from '@/utils/getStockStatus';
 import ZoomImage from '@/components/ZoomImage';
 import { useParams } from 'react-router-dom';
 
-import { LinearProgress, Grid, Button, Checkbox } from '@mui/material';
+import { LinearProgress, Grid, Button, Checkbox, Pagination } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -17,12 +17,30 @@ import { fetchInventory } from "./inventory.service";
 
 const Inventory = () => {
   const dispatch = useDispatch<AppDispatch>();  
-  const { inventory, loading } = useSelector((state: RootState) => state.inventory);
+  const { inventory, loading, totalPages } = useSelector((state: RootState) => state.inventory);
   const { branchId } = useParams();
+  const [page, setPage] = useState(1);
+  const prevBranchId = useRef(branchId);
+
+  const handleChangePage = (
+    _: React.ChangeEvent<unknown>,
+    newPage: number,
+  ) => {
+    setPage(newPage);
+  };
 
   useEffect(() => {
-    dispatch(fetchInventory({ branchId: Number(branchId), page: 1, pageSize: 10 }));
-  },[branchId]);
+    const branchChanged = prevBranchId.current !== branchId;
+    prevBranchId.current = branchId;
+  
+    if (branchChanged) setPage(1);
+  
+    dispatch(fetchInventory({ 
+      branchId: Number(branchId), 
+      page: branchChanged ? 1 : page, 
+      pageSize: 10 
+    }));
+  }, [branchId, page]);
 
   return (
     <MainLayout>
@@ -85,12 +103,20 @@ const Inventory = () => {
                 </div>
               </td>
               <td style={{textAlign: 'center'}}>$ {formatCurrency(item?.price)}</td>
-              <td><EditIcon /></td>
-              <td><DeleteIcon /></td>
+              <td><EditIcon sx={{ color: 'var(--green-500)' }} /></td>
+              <td><DeleteIcon sx={{ color: 'var(--green-500)' }} /></td>
             </tr>
           ))}
         </tbody>
       </table>
+      <div className={styles.pagination}>
+        <Pagination 
+          color="primary"
+          count={totalPages}
+          page={page}
+          onChange={handleChangePage}
+        />
+      </div>
     </MainLayout>
   );
 };

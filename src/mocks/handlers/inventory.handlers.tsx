@@ -13,8 +13,8 @@ export const inventoryHandlers = [
     const branchId = Number(url.searchParams.get('branchId'))
 
     const filtered = inventory.filter(item =>
-      item.branchId === branchId &&
-      item.name.toLowerCase().includes(search)
+      item?.branchId === branchId &&
+      item?.name.toLowerCase().includes(search)
     )
 
     const totalElements = filtered.length
