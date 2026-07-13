@@ -1,4 +1,5 @@
 :root {
+  --green-100: #f0f7f5;
   --green-300: #015135;
   --green-500: #014830;
   --green-700: #013b27;
@@ -24,7 +25,7 @@
       padding: 4px 8px;
     }
     td {
-      background-color: #f0f7f5;
+      background-color: var(--green-100);
       font-size: 14px;
       padding: 4px 8px;
       line-height: 0.7;

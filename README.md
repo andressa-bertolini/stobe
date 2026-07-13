@@ -28,8 +28,20 @@
 
 ## ✨ Features
 
-- Login
-- Store selection
+- Branch selection
+- Inventory page with stock listing
+- Product images with zoom on hover
+- Stock level indicator with color status
+- Pagination
+- Search
+
+## 🚧 Next Features
+- Filters
+- Order by
+- Add Stock Item
+- Edit Stock Item
+- Delete Stock Item
+- Delete multiple stock items when selected
 
 <br>
 

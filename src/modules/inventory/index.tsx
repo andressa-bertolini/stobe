@@ -4,6 +4,7 @@ import type { AppDispatch, RootState } from '@/store';
 import formatCurrency from '@/utils/formatCurrency';
 import getStockStatus from '@/utils/getStockStatus';
 import ZoomImage from '@/components/ZoomImage';
+import Filters from '@/components/Filters';
 import { useParams } from 'react-router-dom';
 
 import { LinearProgress, Grid, Button, Checkbox, Pagination } from '@mui/material';
@@ -22,6 +23,25 @@ const Inventory = () => {
   const [page, setPage] = useState(1);
   const prevBranchId = useRef(branchId);
 
+  const filters = [
+    {
+      type: 'search',
+      label: 'Search'
+    },
+    {
+      type: 'autocomplete',
+      label: 'Type'
+    },
+    {
+      type: 'autocomplete',
+      label: 'Supplier'
+    },
+    {
+      type: 'autocomplete',
+      label: 'Stock Status'
+    }
+  ];
+
   const handleChangePage = (
     _: React.ChangeEvent<unknown>,
     newPage: number,
@@ -33,7 +53,11 @@ const Inventory = () => {
     const branchChanged = prevBranchId.current !== branchId;
     prevBranchId.current = branchId;
   
-    if (branchChanged) setPage(1);
+    if (branchChanged) {
+      setTimeout(() => {
+        setPage(1);
+      }, 800);
+    }
   
     dispatch(fetchInventory({ 
       branchId: Number(branchId), 
@@ -63,6 +87,9 @@ const Inventory = () => {
           </Button>
         </Grid>
       </Grid>
+      <Filters 
+        filters={filters}
+      />
       <table className={styles.table}>
         <thead>
           <tr>
